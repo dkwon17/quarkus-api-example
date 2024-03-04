@@ -7,6 +7,9 @@ components:
   - name: tools
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
+      volumeMounts:
+        - name: m2
+          path: /home/user/.m2
       env:
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
@@ -35,7 +38,6 @@ components:
           value: food_db
         - name: PGDATA
           value: /tmp/pgdata
-
   - name: ubi-minimal
     container:
       image: registry.access.redhat.com/ubi8/ubi-minimal
@@ -43,6 +45,9 @@ components:
       args: ['-f', '/dev/null']
       memoryLimit: 64M
       mountSources: true
+  - name: m2
+    volume:
+      size: 1G
 commands:
   - id: package
     exec:
