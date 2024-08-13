@@ -3,6 +3,9 @@ metadata:
   generateName: quarkus-api-example-demo
 attributes:
   controller.devfile.io/storage-type: ephemeral
+  controller.devfile.io/devworkspace-config:
+    name: custom-dwoc
+    namespace: dkwon17-che
 components:
   - name: tools
     container:
