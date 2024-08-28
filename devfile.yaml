@@ -103,6 +103,12 @@ commands:
       commandLine: "oc new-app -e POSTGRESQL_USER=user -e POSTGRESQL_PASSWORD=password -e POSTGRESQL_DATABASE=food_db postgresql:10-el7 -n demo"
       group:
         kind: test
+  - id: annotate-route
+    exec:
+      component: tools
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: oc annotate route "${DEVWORKSPACE_ID}-tools-8080-list-all-food" haproxy.router.openshift.io/rewrite-target=60s
 events:
   postStart:
+    - annotate-route
     - package
