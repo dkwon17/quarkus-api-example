@@ -16,7 +16,7 @@ NOTE: Perfoming a native Quarkus build with the `packagenative` command fails on
 | `POST` | `/food`                             | Creates a Food resource                                    |
 
 ## Running within Dev Spaces
-
+Update
 ### Run in development mode
 ```
 ./mvnw compile quarkus:dev
