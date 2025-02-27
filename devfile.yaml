@@ -2,7 +2,9 @@ schemaVersion: 2.1.0
 metadata:
   generateName: quarkus-api-example-demo
 attributes:
-  controller.devfile.io/storage-type: ephemeral
+  controller.devfile.io/devworkspace-config:
+    name: my-config
+    namespace: admin-devspaces
 components:
   - name: tools
     container:
