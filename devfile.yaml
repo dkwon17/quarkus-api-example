@@ -1,9 +1,10 @@
 schemaVersion: 2.1.0
 metadata:
   generateName: quarkus-api-example-demo
+  attributes:
+    pod-overrides: {"metadata": {"annotations": {"cluster-autoscaler.kubernetes.io/safe-to-evict":"false"}}}
 attributes:
   controller.devfile.io/storage-type: ephemeral
-  pod-overrides: {"metadata": {"annotations": {"cluster-autoscaler.kubernetes.io/safe-to-evict":"false"}}}
 components:
   - name: tools
     container:
