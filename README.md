@@ -18,6 +18,13 @@ NOTE: Perfoming a native Quarkus build with the `packagenative` command fails on
 ## Running within Dev Spaces
 
 ### Run in development mode
+sadf
+asf
+as
+f
+saf
+d
+f
 ```
 ./mvnw compile quarkus:dev
 ```
