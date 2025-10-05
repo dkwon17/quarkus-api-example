@@ -88,5 +88,5 @@ commands:
         kind: run
         isDefault: true
 events:
-  preStart:
+  postStart:
     - testcommand
