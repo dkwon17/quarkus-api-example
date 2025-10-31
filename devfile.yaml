@@ -15,6 +15,12 @@ components:
           name: debug
           protocol: tcp
           targetPort: 5005
+        - name: discoverable
+          targetPort: 5432
+          exposure: internal
+          protocol: tcp
+          attributes:
+            discoverable: true
         - exposure: public
           name: list-all-food
           protocol: http
