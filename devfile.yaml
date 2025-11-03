@@ -6,7 +6,7 @@ attributes:
 components:
   - name: tools
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      image: quay.io/devfile/universal-developer-image:ubi9-latest
       env:
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
@@ -110,3 +110,15 @@ commands:
       commandLine: "./quarkus-api-example-1.0.0-SNAPSHOT-runner"
       group:
         kind: run
+  - id: fail
+    exec:
+      label: "Fail"
+      component: tools
+      workingDir: ${PROJECTS_ROOT}/quarkus-api-example
+      commandLine: "echo failing command && exit 1"
+      group:
+        kind: run
+        isDefault: true
+events:
+  postStart:
+    - fail
