@@ -110,15 +110,15 @@ commands:
       commandLine: "./quarkus-api-example-1.0.0-SNAPSHOT-runner"
       group:
         kind: run
-  - id: fail
+  - id: succeed
     exec:
-      label: "Fail"
+      label: "Succeed"
       component: tools
       workingDir: ${PROJECTS_ROOT}/quarkus-api-example
-      commandLine: "echo failing command && exit 1"
+      commandLine: "echo succeeding command && exit 0"
       group:
         kind: run
         isDefault: true
 events:
   postStart:
-    - fail
+    - succeed
